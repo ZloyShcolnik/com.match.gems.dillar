@@ -7,7 +7,7 @@ env:
   UNITY_EMAIL: "unitydatastorage@gmail.com"
   UNITY_PASSWORD: "qwerty12345Q"
   
-  APP_NAME: "com.match.gems.dillar-test"
+  APP_NAME: "com.match.gems.dillar-release"
   
   AndroidKeystorePass: "qwerty"
   AndroidKeyaliasPass: "qwerty"
@@ -105,7 +105,7 @@ jobs:
         with:
           buildName: ${{ env.APP_NAME }}
           androidAppBundle: true
-          androidVersionCode: 4
+          androidVersionCode: 1
           androidKeystoreName: user.keystore
           androidKeystoreBase64: ${{ needs.EncodeKeystoreToBase64.outputs.encoding }}
           androidKeystorePass: ${{ env.AndroidKeystorePass }}
