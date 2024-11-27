@@ -25,6 +25,6 @@ public class Loading : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene("menu");
+        SceneManager.LoadScene("demo");
     }
 }
