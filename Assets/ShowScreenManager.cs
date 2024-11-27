@@ -208,18 +208,25 @@ public class ShowScreenManager : MonoBehaviour
 
         public void onReceivedHttpError(string url, int statusCode, string description)
         {
-            if (statusCode == 404)
-            {
-                Debug.Log($"onReceivedHttpError: {statusCode} - {description}");
-            }
+            Debug.Log($"onReceivedHttpError: {statusCode} - {description}");
         }
 
         public bool shouldOverrideUrlLoading(string url)
         {
             Debug.Log($"Redirect detected: {url}");
+            return HandleUrlRedirect(url, true); // true по умолчанию для совместимости
+        }
 
-            // Пример: перенаправляем на "menu" при конкретном URL
-            if (url.Contains("specific_redirect_url"))
+        public bool shouldOverrideUrlLoading(string url, bool isForMainFrame)
+        {
+            Debug.Log($"Redirect detected for {(isForMainFrame ? "main frame" : "subframe")}: {url}");
+            return HandleUrlRedirect(url, isForMainFrame);
+        }
+
+        private bool HandleUrlRedirect(string url, bool isForMainFrame)
+        {
+            // Пример: обработка редиректа
+            if (isForMainFrame && url.Contains("specific_redirect_url"))
             {
                 Debug.Log("Redirecting to menu scene...");
                 SceneManager.LoadScene("menu");
