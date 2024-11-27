@@ -27,7 +27,7 @@ namespace VoxelBusters.EssentialKit.Editor.Android
             androidManifest.SetStartingActivityAttribute("exported", "true");
 
             // Adding usesCleartextTraffic attribute
-            androidManifest.SetApplicationAttribute("usesCleartextTraffic", "false");
+            androidManifest.SetApplicationAttribute("usesCleartextTraffic", "true");
 
             // Adding file access permissions
             //androidManifest.AddPermission("android.permission.READ_EXTERNAL_STORAGE");
