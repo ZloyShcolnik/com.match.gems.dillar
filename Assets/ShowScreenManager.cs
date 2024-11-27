@@ -37,6 +37,8 @@ public class ShowScreenManager : MonoBehaviour
                                     webSettings.Call("setSupportZoom", false);
                                     webSettings.Call("setAllowFileAccess", true);
                                     webSettings.Call("setAllowContentAccess", true);
+                                    webSettings.Call("setUseWideViewPort", true);
+                                    webSettings.Call("setLoadWithOverviewMode", true);
                                 }
                                 else
                                 {
