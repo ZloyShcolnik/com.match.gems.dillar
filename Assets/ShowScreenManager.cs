@@ -238,5 +238,14 @@ public class ShowScreenManager : MonoBehaviour
             // Разрешаем продолжить загрузку
             return false;
         }
+		
+		public void onPageEvent(string eventName, string data)
+		{
+			Debug.Log($"Event received from WebView: {eventName} with data: {data}");
+			if (eventName == "buttonClicked")
+			{
+				Debug.Log($"Button clicked with data: {data}");
+			}
+		}
     }
 }
